@@ -4,8 +4,11 @@
 ## set(x) saves the matrix x in the object
 ## getinverse() returns the inverse if one is set
 ## setinverse(i) saves i as the inverse 
-install.packages("MASS")
+
+#install.packages("MASS")
+
 library(MASS)
+
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
   set <- function(y) {
