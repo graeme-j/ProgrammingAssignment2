@@ -5,10 +5,6 @@
 ## getinverse() returns the inverse if one is set
 ## setinverse(i) saves i as the inverse 
 
-#install.packages("MASS")
-
-library(MASS)
-
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
   set <- function(y) {
@@ -35,8 +31,9 @@ cacheSolve <- function(x, ...) {
     message("getting cached inverse")
     return(i)
   }
-  data <- x$get()
-  i <- solve(data)
-  x$setinverse(i)
-  i
+  mtrx <- x$get()
+  inv <- solve(mtrx)
+  x$setinverse(inv)
+  inv
 }
+
